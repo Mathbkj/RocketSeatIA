@@ -116,7 +116,7 @@ crew = Crew(
   verbose=True,
   max_iter=15,
 )
-results = crew.kickoff(inputs={'ticket':'AAPL'})
+results = crew.kickoff(inputs={ticket__fetcher:'AAPL'})
 
 
 
@@ -129,7 +129,7 @@ with st.sidebar:
   if(submit_button):
     if not topic:st.error("Please fill the ticket field")
   else:
-    results = crew.kickoff(inputs={'ticket':topic})
+    results = crew.kickoff(inputs={'ticket':'AAPL'})
     st.subheader("Results of your research:")
     st.write(results['final_output'])
 
