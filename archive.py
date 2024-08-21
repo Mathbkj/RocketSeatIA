@@ -11,6 +11,7 @@ import streamlit as st;
 
 
 
+
 def ticket__fetcher(ticket):
   stock = yf.download(ticket,"2023-08-09","2024-08-09")
   return stock
@@ -61,7 +62,6 @@ newsAnalyst = Agent(
 get_news = Task(
   description="""Take the stock and always include BTC to it(if not requested)
   Use the search tool to search each one individually.
-  The current date is {datetime.now()}
   
   Compose the results into a helpful report""",
   expected_output="""
@@ -120,7 +120,6 @@ crew = Crew(
 
 with st.sidebar:
   st.header("Enter the Stock to Research")
-
   with st.form(key='research_form'):
     topic=st.text_input("Select the Ticket")
     submit_button = st.form_submit_button(label="Run Research")
