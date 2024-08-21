@@ -21,7 +21,7 @@ finance__tool = Tool(
   description="Fetches financial data for a given ticket."
 )
 
-os.environ["OPENAI_API_KEY"] = st.secrets.keys(['OPENAI_API_KEY'])
+os.environ["OPENAI_API_KEY"] = st.secrets['OPENAI_API_KEY']
 llm = ChatOpenAI(model="gpt-3.5-turbo")
 
 analystAgent = Agent(
